@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'nms.client.apps.ClientConfig',
     'nms.payment.apps.PaymentConfig',
     'nms.network.apps.NetworkConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -108,6 +109,10 @@ else:
         }
     }
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 25
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
