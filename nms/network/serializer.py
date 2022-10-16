@@ -10,4 +10,5 @@ class BandwidthSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         bandwidth = Bandwidth.objects.create(**validated_data)
+        bandwidth._end_date()
         return bandwidth

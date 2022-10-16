@@ -1,8 +1,8 @@
 from django.urls import path
 from rest_framework import routers
-from nms.network.views import BandwidthViewset
+from nms.payment.views import InvoicesViewset
 
 router = routers.SimpleRouter()
-router.register(r'network', BandwidthViewset, basename='Network')
+router.register(r'payment', InvoicesViewset, basename='Payment')
 
 urlpatterns = router.urls

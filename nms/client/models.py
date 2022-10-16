@@ -27,3 +27,7 @@ class Clients(models.Model):
         self.custom_unique_feild = self.custom_unique_feild.replace(' ', '_')
         self.custom_unique_feild = self.custom_unique_feild.lower()
         super(Clients, self).save(*args, **kwargs)
+    
+    def __str__(self):
+        output = self.first_name + ' ' + self.last_name + ' > ' + self.location
+        return output
